@@ -25,10 +25,10 @@ namespace Demo.Pages
         public AgentListPage()
         {
             InitializeComponent();
-            LVProduct.ItemsSource = App.DB.Agent.ToList();
             var agentType = App.DB.AgentType.ToList();
             agentType.Insert(0, new Model.AgentType{ Title = "Все типы" });
             Filtr.ItemsSource = agentType;
+            Sortir.SelectedIndex = 0;
         }
 
         int numberPage = 0;

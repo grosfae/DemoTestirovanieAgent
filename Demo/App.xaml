@@ -22,30 +22,17 @@
                     <ControlTemplate TargetType="RadioButton" >
                         <Grid Background="{TemplateBinding Background}" Width="{TemplateBinding Width}">
                             <Label Height="auto" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0 5 0 0" FontSize="{TemplateBinding FontSize}" Foreground="{TemplateBinding Foreground}" Content="{TemplateBinding Content}"/>
-                            <Separator Visibility="Hidden" x:Name="LineSep" Background="#FF3881EF" Width="48" Margin="0 5 0 0" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                            <Separator Visibility="Hidden" x:Name="LineSep" Background="Black" Width="48" Margin="0 5 0 0" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
                         </Grid>
                         <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background">
-                                    <Setter.Value>
-                                        <SolidColorBrush Color="#FF3881EF" Opacity="0.23"/>
-                                    </Setter.Value>
-                                </Setter>
-                                <Setter Property="Foreground" Value="#FF3881EF"/>
-                            </Trigger>
                             <Trigger Property="IsChecked" Value="true">
                                 <Setter TargetName="LineSep" Property="Visibility" Value="Visible" />
-                                <Setter Property="Foreground" Value="#FF3881EF"/>
+                                <Setter Property="Foreground" Value="Black"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Foreground" Value="#FF3881EF" />
-                </Trigger>
-            </Style.Triggers>
         </Style>
     </Application.Resources>
 </Application>

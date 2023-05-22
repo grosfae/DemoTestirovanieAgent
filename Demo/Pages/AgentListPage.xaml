@@ -5,8 +5,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Demo.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="AgentListPage">
+      d:DesignHeight="650" d:DesignWidth="800"
+      Title="AgentListPage" Loaded="Page_Loaded">
 
     <Page.Resources>
 
@@ -25,18 +25,18 @@
         <WrapPanel Grid.ColumnSpan="3" Orientation="Horizontal" Background="#FFF9969E">
             <StackPanel Orientation="Horizontal"  Margin="5">
                 <TextBlock Text="Поиск:"  Margin="5"/>
-                <TextBox x:Name="TbSearch" Text="" Width="100" Margin="5" Background="White" />
+                <TextBox x:Name="TbSearch" Text="" Width="100" Margin="5" Background="White" TextChanged="TextBox_TextChanged" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Text="По типу:" Margin="5" VerticalAlignment="Center"/>
                 <ComboBox Width="150" Height="25" 
                           x:Name="Filtr" 
                           DisplayMemberPath="Title"
-                          SelectedIndex="0"></ComboBox>
+                          SelectedIndex="0" SelectionChanged="ComboBox_SelectionChanged"></ComboBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Text="Сортировать по:"  Margin="5" VerticalAlignment="Center"/>
-                <ComboBox Width="150" Height="25" Name="Sortir">
+                <ComboBox Width="150" Height="25" Name="Sortir" SelectionChanged="ComboBox_SelectionChanged" >
                     <ComboBoxItem>по умолчанию</ComboBoxItem>
                     <ComboBoxItem>цене по Возрастанию</ComboBoxItem>
                     <ComboBoxItem>цене по убыванию</ComboBoxItem>
@@ -47,7 +47,7 @@
                   
                   BorderThickness="0"
                   ScrollViewer.HorizontalScrollBarVisibility="Hidden"
-                  Height="360">
+                  Height="510">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border x:Name="border" BorderBrush="Black"
@@ -95,7 +95,7 @@
         <Grid Height="53" Background="White">
             <StackPanel Orientation="Horizontal">
                 <Button x:Name="LeftBtn" Background="Transparent" BorderThickness="0" Content="&lt;" Width="30" Click="LeftBtn_Click"/>
-                <StackPanel x:Name="SPanelPages" Width="auto"/>
+                <StackPanel x:Name="SPanelPages" Width="auto" Orientation="Horizontal"/>
                 <Button x:Name="RightBtn" Background="Transparent" BorderThickness="0" Content="&gt;" Width="30" Click="RightBtn_Click"/>
             </StackPanel>
         </Grid>
